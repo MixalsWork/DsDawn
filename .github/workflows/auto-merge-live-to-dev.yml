@@ -25,8 +25,8 @@ jobs:
         
       - name: Merge main into development
         run: |
-          git merge origin/main --allow-unrelated-histories --no-ff -m "Auto-merge main into development [skip ci]" || echo "No changes to merge"
-
+          git checkout development
+          git merge origin/main --allow-unrelated-histories --strategy-option=theirs -m "Auto-merge main into development [skip ci]" || echo "Conflicts resolved automatically"
 
       - name: Push changes to development branch
         run: git push origin development
