@@ -1,9 +1,9 @@
-name: Auto Merge Live to Development
+name: Auto Merge Main to Development
 
 on:
   push:
     branches:
-      - live
+      - main
 
 jobs:
   auto-merge:
@@ -23,9 +23,9 @@ jobs:
       - name: Switch to development branch
         run: git checkout development
 
-      - name: Merge live into development
+      - name: Merge main into development
         run: |
-          git merge origin/live --no-ff --commit -m "Auto-merge live into development [skip ci]" || echo "No changes to merge"
+          git merge origin/main --no-ff --commit -m "Auto-merge main into development [skip ci]" || echo "No changes to merge"
 
       - name: Push changes to development branch
         run: git push origin development
