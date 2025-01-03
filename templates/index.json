@@ -100,6 +100,7 @@
       "blocks": {
         "video": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "Describe the video for customers using screen readers",
